@@ -14,14 +14,14 @@ port = 12345
 client_socket.connect((host, port))
 
 api_key = '227487d348e815512d9f1c997142adde'
-latitude = '40.7128'
-longitude = '-74.0060'
+latitude = '39.9526'
+longitude = '75.1652'
 
 current_timestamp = int(time.time())
 start_time = current_timestamp - 3600
 end_time = current_timestamp
 
-city_name = "newyork"
+city_name = "phildelphia"
 client_socket.sendall(city_name.encode())
 
 url = f"http://api.openweathermap.org/data/2.5/air_pollution/history?lat={latitude}&lon={longitude}&start={start_time}&end={end_time}&appid={api_key}"
