@@ -2,10 +2,24 @@ import socket
 import pickle
 import pandas as pd
 import json
-import subprocess
-import threading
 
-def handle_client(client_socket, addr):
+# Create a socket object
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Get the local machine name and port
+host = socket.gethostname()
+port = 12345
+
+# Bind to the port
+server_socket.bind((host, port))
+
+# Listen for incoming connections
+server_socket.listen(5)
+
+print("Server is listening...")
+
+while True:
+    client_socket, addr = server_socket.accept()
     print(f"Connection from {addr}")
 
     city_name = client_socket.recv(1024).decode()
@@ -13,7 +27,7 @@ def handle_client(client_socket, addr):
 
     # Receive data from the client
     data = client_socket.recv(1024).decode()
-    # print(type(data))
+    print(type(data))
     # Convert the message to uppercase
     df_json = json.loads(data)
     df_json = df_json["list"]
@@ -30,7 +44,7 @@ def handle_client(client_socket, addr):
             
     df = pd.DataFrame(df)
     df = df.drop(columns=['aqi'])
-    #print(df)
+    print(df)
 
     if city_name == "newyork":
         with open('model_c1.pkl', 'rb') as file:
@@ -47,46 +61,12 @@ def handle_client(client_socket, addr):
     
     aqi_prediction = str(predictions[0])
     
-    #print(len(aqi_prediction.encode()))
-    #print(aqi_prediction)
+    print(len(aqi_prediction.encode()))
+    print(aqi_prediction)
     
-    
+
     # Send the uppercase message back to the client
     client_socket.sendall(aqi_prediction.encode())
-    print("Prediction sent to client")
-
-    # Define the command to execute
-    command = ["python3", "AQI_server_ensemble.py", city_name]
-
-    # Execute the command
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-    print("New Model trained with new data for ",city_name)
 
     # Close the connection
     client_socket.close()
-
-
-def main():
-    # Create a socket object
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    # Get the local machine name and port
-    host = socket.gethostname()
-    port = 12345
-
-    # Bind to the port
-    server_socket.bind((host, port))
-
-    # Listen for incoming connections
-    server_socket.listen(5)
-
-    print("Server is listening...")
-
-    while True:
-        client_socket, addr = server_socket.accept()
-        thread = threading.Thread(target=handle_client, args=(client_socket, addr))
-        thread.start()
-
-if __name__ == "__main__":
-    main()

@@ -44,9 +44,10 @@ client_socket.sendall(result_bytes)
 
 # Receive the response from the server
 response = client_socket.recv(1024).decode()
-print(type(response))
 
-print("Received from server:", response)
+
+
+print("AQI in Phildelphia that received from server:",  str(int(round(float(response)))))
 
 # Close the client socket
 client_socket.close()

@@ -1,7 +1,13 @@
 import threading
 import requests
 import pandas as pd
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error, accuracy_score
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+from sklearn.ensemble import VotingRegressor
+from sklearn.svm import SVR
+from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor
+from catboost import CatBoostRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from xgboost import XGBRegressor
 from sklearn.tree import DecisionTreeRegressor
 import time
 import pickle
@@ -11,9 +17,6 @@ import warnings
 
 # Suppress FutureWarning messages
 warnings.simplefilter(action='ignore', category=FutureWarning)
-
-# Your code that generates the FutureWarning message
-
 
 def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name):
     try:
@@ -41,8 +44,28 @@ def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name
         y = df['aqi']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+        # Initialize base regressor models
+        svr = SVR()
+        rf = RandomForestRegressor()
+        catboost = CatBoostRegressor(logging_level='Silent')  # Set logging level to silent
+        knn = KNeighborsRegressor()
+        adaboost = AdaBoostRegressor()
+        xgboost = XGBRegressor()
+        dt = DecisionTreeRegressor()
+
+        # Create ensemble model
+        model = VotingRegressor([
+            ('svr', svr),
+            ('rf', rf),
+            ('catboost', catboost),
+            ('knn', knn),
+            ('adaboost', adaboost),
+            ('xgboost', xgboost),
+            ('dt', dt)  # Add Decision Tree
+        ])
+        
+        
         # Train the model
-        model = DecisionTreeRegressor()
         model.fit(X_train, y_train)
 
         # Save the model to a file
@@ -56,8 +79,6 @@ def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name
         r2 = r2_score(y_test, y_pred)
         rmse = mean_squared_error(y_test, y_pred, squared=False)
         mae = mean_absolute_error(y_test, y_pred)
-        accuracy = accuracy_score(y_test, y_pred)
-        print("Accuracy:", accuracy)
   
         print("R-square:", r2)
         print("RMSE:", rmse)

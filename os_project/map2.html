@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cf7a9c373682d2c70fb33a147035eadd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cf7a9c373682d2c70fb33a147035eadd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cf7a9c373682d2c70fb33a147035eadd = L.map(
+                "map_cf7a9c373682d2c70fb33a147035eadd",
+                {
+                    center: [37.0902, -95.7129],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_79a2f595854c035575557a0fff387ca8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_79a2f595854c035575557a0fff387ca8.addTo(map_cf7a9c373682d2c70fb33a147035eadd);
+        
+    
+            var circle_marker_68fc41579f8c546b6e2d27b8acd86e94 = L.circleMarker(
+                [40.7128, -74.006],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cf7a9c373682d2c70fb33a147035eadd);
+        
+    
+        var popup_9a921dd952a3dc0f2160e1dec113c23f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a166c8db6d2dc9666e83f3a2c5996fb = $(`<div id="html_4a166c8db6d2dc9666e83f3a2c5996fb" style="width: 100.0%; height: 100.0%;">New York: AQI 1</div>`)[0];
+                popup_9a921dd952a3dc0f2160e1dec113c23f.setContent(html_4a166c8db6d2dc9666e83f3a2c5996fb);
+            
+        
+
+        circle_marker_68fc41579f8c546b6e2d27b8acd86e94.bindPopup(popup_9a921dd952a3dc0f2160e1dec113c23f)
+        ;
+
+        
+    
+    
+            var circle_marker_72be15db52ed375ccf6636f1b225ca62 = L.circleMarker(
+                [42.3601, -71.0589],
+                {"bubblingMouseEvents": true, "color": "darkorange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkorange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cf7a9c373682d2c70fb33a147035eadd);
+        
+    
+        var popup_998d0da235bd07b27383953c8b80223f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_067762605204723219c93563e37234ab = $(`<div id="html_067762605204723219c93563e37234ab" style="width: 100.0%; height: 100.0%;">Boston: AQI 4</div>`)[0];
+                popup_998d0da235bd07b27383953c8b80223f.setContent(html_067762605204723219c93563e37234ab);
+            
+        
+
+        circle_marker_72be15db52ed375ccf6636f1b225ca62.bindPopup(popup_998d0da235bd07b27383953c8b80223f)
+        ;
+
+        
+    
+    
+            var circle_marker_ffbc275b88a768e7ce2b9db90e896b83 = L.circleMarker(
+                [39.9526, -75.1652],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cf7a9c373682d2c70fb33a147035eadd);
+        
+    
+        var popup_dc4948e378aa932125d9b269bd12dbcc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54515098752e4d31b8eb30b47e961bb6 = $(`<div id="html_54515098752e4d31b8eb30b47e961bb6" style="width: 100.0%; height: 100.0%;">Philadelphia: AQI 3</div>`)[0];
+                popup_dc4948e378aa932125d9b269bd12dbcc.setContent(html_54515098752e4d31b8eb30b47e961bb6);
+            
+        
+
+        circle_marker_ffbc275b88a768e7ce2b9db90e896b83.bindPopup(popup_dc4948e378aa932125d9b269bd12dbcc)
+        ;
+
+        
+    
+</script>
+</html>

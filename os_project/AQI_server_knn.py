@@ -1,8 +1,8 @@
 import threading
 import requests
 import pandas as pd
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error, accuracy_score
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+from sklearn.neighbors import KNeighborsRegressor
 import time
 import pickle
 import sys
@@ -11,9 +11,6 @@ import warnings
 
 # Suppress FutureWarning messages
 warnings.simplefilter(action='ignore', category=FutureWarning)
-
-# Your code that generates the FutureWarning message
-
 
 def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name):
     try:
@@ -42,7 +39,7 @@ def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
         # Train the model
-        model = DecisionTreeRegressor()
+        model = KNeighborsRegressor(n_neighbors=5)  # You can adjust the number of neighbors as needed
         model.fit(X_train, y_train)
 
         # Save the model to a file
@@ -56,8 +53,6 @@ def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name
         r2 = r2_score(y_test, y_pred)
         rmse = mean_squared_error(y_test, y_pred, squared=False)
         mae = mean_absolute_error(y_test, y_pred)
-        accuracy = accuracy_score(y_test, y_pred)
-        print("Accuracy:", accuracy)
   
         print("R-square:", r2)
         print("RMSE:", rmse)

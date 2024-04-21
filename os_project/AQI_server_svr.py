@@ -1,8 +1,8 @@
 import threading
 import requests
 import pandas as pd
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error, accuracy_score
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error,accuracy_score
+from sklearn.svm import SVR
 import time
 import pickle
 import sys
@@ -42,7 +42,7 @@ def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
         # Train the model
-        model = DecisionTreeRegressor()
+        model = SVR()
         model.fit(X_train, y_train)
 
         # Save the model to a file
@@ -52,16 +52,20 @@ def retrieve_data_and_train_model(lat, lon, start, end, api_key, model_file_name
         # Make predictions
         y_pred = model.predict(X_test)
 
-        # Evaluate the predictions
-        r2 = r2_score(y_test, y_pred)
-        rmse = mean_squared_error(y_test, y_pred, squared=False)
         mae = mean_absolute_error(y_test, y_pred)
-        accuracy = accuracy_score(y_test, y_pred)
-        print("Accuracy:", accuracy)
-  
-        print("R-square:", r2)
-        print("RMSE:", rmse)
-        print("MAE:", mae)
+        mse = mean_squared_error(y_test, y_pred)
+        rmse = mean_squared_error(y_test, y_pred, squared=False)  # Calculate RMSE
+        r2 = r2_score(y_test, y_pred)
+
+
+        # Print the regression metrics
+        print("Mean Absolute Error:", mae)
+        print("Mean Squared Error:", mse)
+        print("Root Mean Squared Error:", rmse)
+        print("R-squared (r2) score:", r2)
+        
+
+        
 
     except requests.exceptions.RequestException as e:
         # Handle any exceptions that may occur during the request
