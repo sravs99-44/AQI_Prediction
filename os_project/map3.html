@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_eb7fb684bedcf247a334827684cc8109 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_eb7fb684bedcf247a334827684cc8109" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_eb7fb684bedcf247a334827684cc8109 = L.map(
+                "map_eb7fb684bedcf247a334827684cc8109",
+                {
+                    center: [37.0902, -95.7129],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7d1309d786e521483b32746606525762 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_7d1309d786e521483b32746606525762.addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+            var circle_marker_6673d2c900d732a6435d36fbbb95d659 = L.circleMarker(
+                [40.7128, -74.006],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+        var popup_6b39f872c35f5e3e3bf00d0c91b58541 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e888f30a11a240e18d64fe2d753fc8e = $(`<div id="html_5e888f30a11a240e18d64fe2d753fc8e" style="width: 100.0%; height: 100.0%;">New York: AQI 5 (Very Poor)</div>`)[0];
+                popup_6b39f872c35f5e3e3bf00d0c91b58541.setContent(html_5e888f30a11a240e18d64fe2d753fc8e);
+            
+        
+
+        circle_marker_6673d2c900d732a6435d36fbbb95d659.bindPopup(popup_6b39f872c35f5e3e3bf00d0c91b58541)
+        ;
+
+        
+    
+    
+            var circle_marker_f442bef31d8cdef935b4304ee04b1070 = L.circleMarker(
+                [42.3601, -71.0589],
+                {"bubblingMouseEvents": true, "color": "darkorange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkorange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+        var popup_7aba0a3880ce5bc3200fd24d7a137cd0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d429d591185e213635ca33bd5264c1e = $(`<div id="html_9d429d591185e213635ca33bd5264c1e" style="width: 100.0%; height: 100.0%;">Boston: AQI 4 (Poor)</div>`)[0];
+                popup_7aba0a3880ce5bc3200fd24d7a137cd0.setContent(html_9d429d591185e213635ca33bd5264c1e);
+            
+        
+
+        circle_marker_f442bef31d8cdef935b4304ee04b1070.bindPopup(popup_7aba0a3880ce5bc3200fd24d7a137cd0)
+        ;
+
+        
+    
+    
+            var circle_marker_b68e6f297c1e5eacbe32be5e8abfde8e = L.circleMarker(
+                [39.9526, -75.1652],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+        var popup_1eee626f4b63c9686b10c117c520aa33 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4135d154c632197e8b2f179019811c1a = $(`<div id="html_4135d154c632197e8b2f179019811c1a" style="width: 100.0%; height: 100.0%;">Philadelphia: AQI 1 (Good)</div>`)[0];
+                popup_1eee626f4b63c9686b10c117c520aa33.setContent(html_4135d154c632197e8b2f179019811c1a);
+            
+        
+
+        circle_marker_b68e6f297c1e5eacbe32be5e8abfde8e.bindPopup(popup_1eee626f4b63c9686b10c117c520aa33)
+        ;
+
+        
+    
+    
+            var circle_marker_e34c72b636880078d0d2be08f1c43f39 = L.circleMarker(
+                [40.2732, -76.8867],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+        var popup_3e4ce09d9ecc41141407bc32a02f7df1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d9591b321d32125dae53ba4575ed4704 = $(`<div id="html_d9591b321d32125dae53ba4575ed4704" style="width: 100.0%; height: 100.0%;">Harrisburg: AQI 1 (Good)</div>`)[0];
+                popup_3e4ce09d9ecc41141407bc32a02f7df1.setContent(html_d9591b321d32125dae53ba4575ed4704);
+            
+        
+
+        circle_marker_e34c72b636880078d0d2be08f1c43f39.bindPopup(popup_3e4ce09d9ecc41141407bc32a02f7df1)
+        ;
+
+        
+    
+    
+            var circle_marker_90818ed568cd6822aad3616c867bb5b0 = L.circleMarker(
+                [38.9072, -77.0369],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+        var popup_91396d1bae658b56dce7461d370fd8fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7739d834051d951ec9f644318bded25a = $(`<div id="html_7739d834051d951ec9f644318bded25a" style="width: 100.0%; height: 100.0%;">Washington D.C: AQI 2 (Fair)</div>`)[0];
+                popup_91396d1bae658b56dce7461d370fd8fa.setContent(html_7739d834051d951ec9f644318bded25a);
+            
+        
+
+        circle_marker_90818ed568cd6822aad3616c867bb5b0.bindPopup(popup_91396d1bae658b56dce7461d370fd8fa)
+        ;
+
+        
+    
+    
+            var circle_marker_c57de91148951c0cfc6211d1d1148a69 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_eb7fb684bedcf247a334827684cc8109);
+        
+    
+        var popup_3a0f17a6ddd0e771561159f24b5741ab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4704172f90af71183394892f7cad971 = $(`<div id="html_c4704172f90af71183394892f7cad971" style="width: 100.0%; height: 100.0%;">NewYork: AQI 5 (Very Poor)</div>`)[0];
+                popup_3a0f17a6ddd0e771561159f24b5741ab.setContent(html_c4704172f90af71183394892f7cad971);
+            
+        
+
+        circle_marker_c57de91148951c0cfc6211d1d1148a69.bindPopup(popup_3a0f17a6ddd0e771561159f24b5741ab)
+        ;
+
+        
+    
+</script>
+</html>

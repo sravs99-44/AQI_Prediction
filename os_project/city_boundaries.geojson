@@ -1,0 +1,96 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "New York"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-74.255, 40.495],
+              [-73.69, 40.495],
+              [-73.69, 40.915],
+              [-74.255, 40.915],
+              [-74.255, 40.495]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Boston"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-71.19, 42.235],
+              [-70.92, 42.235],
+              [-70.92, 42.405],
+              [-71.19, 42.405],
+              [-71.19, 42.235]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Philadelphia"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-75.34, 39.875],
+              [-74.94, 39.875],
+              [-74.94, 40.15],
+              [-75.34, 40.15],
+              [-75.34, 39.875]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Harrisburg"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-76.93, 40.15],
+              [-76.78, 40.15],
+              [-76.78, 40.31],
+              [-76.93, 40.31],
+              [-76.93, 40.15]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Washington D.C."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-77.13, 38.79],
+              [-76.91, 38.79],
+              [-76.91, 38.995],
+              [-77.13, 38.995],
+              [-77.13, 38.79]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+  
